@@ -14,19 +14,25 @@
   <div class="notebook-wrap">
     <div class="notebook">
       <div class="notebook-meta">
-        <div><span class="meta-label">Project</span><span class="meta-value">Abigail Lee</span></div>
+        <div><span class="meta-label">Project</span><span class="meta-value">Home</span></div>
         <div><span class="meta-label">Date</span><span class="meta-value" id="lab-date">--/--/----</span></div>
         <div><span class="meta-label">Page No.</span><span class="meta-value">001</span></div>
       </div>
 
       <img class="stamp-photo" src="images/headshot.jpg" alt="Abigail Lee">
 
+      <p class="belongs-to">This notebook belongs to:</p>
       <div class="notebook-title-row">
         <h1 class="notebook-title">Abigail Lee</h1>
-        <img class="title-icon" src="images/dna.png" alt="DNA helix">
+        <img class="title-icon" src="images/dna-sketch.svg" alt="DNA helix">
       </div>
       <p class="notebook-tagline">computational biology &middot; protein design</p>
-      <p class="fact-line"><img src="images/caffeine.jpg" alt="Caffeine molecule"> fueled by caffeine</p>
+      <p class="fact-line"><img src="images/caffeine-recolor.png" alt="Mystery molecule"> my favorite molecule</p>
+      <form class="molecule-inline" id="molecule-form">
+        <input type="text" class="molecule-inline__input" id="molecule-input" placeholder="what is this molecule?" autocomplete="off" aria-label="What is this molecule?">
+        <button type="submit" class="molecule-inline__submit">Guess</button>
+      </form>
+      <p class="molecule-inline__feedback" id="molecule-feedback" aria-live="polite"></p>
 
       <p class="section-label">Abstract</p>
       <p class="notebook-text">
@@ -74,5 +80,7 @@
     var now = new Date();
     document.getElementById('lab-date').textContent = now.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
   </script>
+  <script src="js/transitions.js"></script>
+  <script src="js/molecule-guess.js"></script>
 </body>
 </html>

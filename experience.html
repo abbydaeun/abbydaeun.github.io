@@ -23,62 +23,68 @@
 
       <div class="notebook-title-row">
         <h1 class="notebook-title notebook-title--sub">Experience</h1>
-        <img class="title-icon" src="images/mitochondria.png?v=2" alt="Mitochondria">
+        <img class="title-icon" src="images/mitochondria-sketch.svg" alt="Mitochondria">
       </div>
       <p class="notebook-tagline">"the powerhouse"</p>
 
-      <p class="section-label">Log</p>
-      <ul class="notebook-list">
-        <li class="list-row">
-          <span class="index-num">01</span>
-          <span class="list-name">MedDesign Intern @ Pfizer</span>
-          <span class="list-detail">Feb 2026&ndash;Present</span>
-        </li>
-        <li class="list-row">
-          <span class="index-num">02</span>
-          <span class="list-name">ML Intern @ Varosync</span>
-          <span class="list-detail">Nov 2025&ndash;Feb 2026</span>
-        </li>
-        <li class="list-row">
-          <span class="index-num">03</span>
-          <span class="list-name">Research Asst @ Huang Lab</span>
-          <span class="list-detail">Jun&ndash;Sep 2025</span>
-        </li>
-        <li class="list-row">
-          <span class="index-num">04</span>
-          <span class="list-name">Research Asst @ Goins Lab</span>
-          <span class="list-detail">Mar 2024&ndash;May 2025</span>
-        </li>
-        <li class="list-row">
-          <span class="index-num">05</span>
-          <span class="list-name">Research Asst @ Parker Lab</span>
-          <span class="list-detail">Jan&ndash;Mar 2024</span>
-        </li>
-      </ul>
+      <div class="log-columns">
+        <div class="log-column">
+          <p class="section-label">Log</p>
+          <ul class="notebook-list">
+            <li class="list-row">
+              <span class="index-num">01</span>
+              <span class="list-name">MedDesign Intern @ Pfizer</span>
+              <span class="list-detail">Feb 2026&ndash;Present</span>
+            </li>
+            <li class="list-row">
+              <span class="index-num">02</span>
+              <span class="list-name">ML Intern @ Varosync</span>
+              <span class="list-detail">Nov 2025&ndash;Feb 2026</span>
+            </li>
+            <li class="list-row">
+              <span class="index-num">03</span>
+              <span class="list-name">Research Asst @ Huang Lab</span>
+              <span class="list-detail">Jun&ndash;Sep 2025</span>
+            </li>
+            <li class="list-row">
+              <span class="index-num">04</span>
+              <span class="list-name">Research Asst @ Goins Lab</span>
+              <span class="list-detail">Mar 2024&ndash;May 2025</span>
+            </li>
+            <li class="list-row">
+              <span class="index-num">05</span>
+              <span class="list-name">Research Asst @ Parker Lab</span>
+              <span class="list-detail">Jan&ndash;Mar 2024</span>
+            </li>
+          </ul>
+        </div>
 
-      <p class="section-label">Log &mdash; Stanford</p>
-      <ul class="notebook-list">
-        <li class="list-row">
-          <span class="index-num">06</span>
-          <span class="list-name">Social Media Strategist, CTL</span>
-          <span class="list-detail">Feb&ndash;Jun 2025</span>
-        </li>
-        <li class="list-row">
-          <span class="index-num">07</span>
-          <span class="list-name">Director of Membership, USVH</span>
-          <span class="list-detail">Sep 2025&ndash;Jun 2026</span>
-        </li>
-        <li class="list-row">
-          <span class="index-num">08</span>
-          <span class="list-name">Dir. of Community Events, APAMSA</span>
-          <span class="list-detail">Sep 2025&ndash;Jun 2026</span>
-        </li>
-        <li class="list-row">
-          <span class="index-num">09</span>
-          <span class="list-name">Co-Director, Innovative Styles</span>
-          <span class="list-detail">Sep 2025&ndash;Jun 2026</span>
-        </li>
-      </ul>
+        <div class="log-column">
+          <p class="section-label">Log &mdash; Stanford</p>
+          <ul class="notebook-list">
+            <li class="list-row">
+              <span class="index-num">06</span>
+              <span class="list-name">Social Media Strategist, CTL</span>
+              <span class="list-detail">Feb&ndash;Jun 2025</span>
+            </li>
+            <li class="list-row">
+              <span class="index-num">07</span>
+              <span class="list-name">Director of Membership, USVH</span>
+              <span class="list-detail">Sep 2025&ndash;Jun 2026</span>
+            </li>
+            <li class="list-row">
+              <span class="index-num">08</span>
+              <span class="list-name">Dir. of Community Events, APAMSA</span>
+              <span class="list-detail">Sep 2025&ndash;Jun 2026</span>
+            </li>
+            <li class="list-row">
+              <span class="index-num">09</span>
+              <span class="list-name">Co-Director, Innovative Styles</span>
+              <span class="list-detail">Sep 2025&ndash;Jun 2026</span>
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <div class="notebook-footer">
         <div><span class="meta-label">Recorded by</span><span class="meta-value">A. Lee</span></div>
@@ -91,5 +97,6 @@
     var now = new Date();
     document.getElementById('lab-date').textContent = now.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
   </script>
+  <script src="js/transitions.js"></script>
 </body>
 </html>
