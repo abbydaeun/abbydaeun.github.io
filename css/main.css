@@ -8,17 +8,17 @@
 }
 
 :root {
-  --page-bg: #ddc7a0;
-  --page-bg-2: #cbb081;
-  --paper: #ffffff;
-  --grid-line: rgba(139, 94, 42, 0.12);
+  --page-bg: #2b4d7e;
+  --page-bg-2: #1c3557;
+  --paper: #f8f5ec;
+  --grid-line: rgba(43, 77, 126, 0.14);
   --margin-line: #b5573f;
-  --ink: #2b1d12;
-  --ink-soft: #7a6248;
-  --ink-faint: #c9b592;
-  --rule: #ddceac;
-  --amber: #b8721d;
-  --amber-dark: #8a5615;
+  --ink: #232a38;
+  --ink-soft: #5b6472;
+  --ink-faint: #aab2bf;
+  --rule: #d9cfb0;
+  --amber: #2b4d7e;
+  --amber-dark: #1c3557;
   --shadow: 0 16px 36px rgba(59, 40, 15, 0.22), 0 2px 6px rgba(59, 40, 15, 0.16);
 }
 
@@ -29,28 +29,48 @@ body {
 
 body {
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.3) 0%, transparent 45%),
-    radial-gradient(circle at 85% 88%, rgba(59, 40, 15, 0.12) 0%, transparent 50%),
-    linear-gradient(160deg, var(--page-bg) 0%, var(--page-bg-2) 100%);
+  background: var(--page-bg);
   color: var(--ink);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
-  padding: 3rem 1rem 4rem;
+  padding: 3rem 1rem;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .mono {
   font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    animation: page-fade-in 0.35s ease both;
+  }
+
+  body.is-leaving {
+    opacity: 0;
+    transition: opacity 0.22s ease;
+  }
+
+  @keyframes page-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 /* ----- notebook shell ----- */
 
 .notebook-wrap {
   width: 100%;
-  max-width: 760px;
+  max-width: 840px;
 }
 
 .notebook {
@@ -59,8 +79,8 @@ body {
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 24px 24px;
-  padding: 3.25rem 3.25rem 2.75rem 5.75rem;
+  background-size: 25px 25px;
+  padding: 3.5rem 3.5rem 3rem 6.1rem;
   box-shadow: var(--shadow);
   transform: rotate(-0.4deg);
 }
@@ -148,6 +168,13 @@ body {
 
 /* ----- title ----- */
 
+.belongs-to {
+  font-family: "Caveat", cursive;
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.1rem;
+}
+
 .notebook-title-row {
   display: flex;
   align-items: center;
@@ -193,7 +220,6 @@ body {
 .margin-note img {
   width: 100%;
   display: block;
-  filter: sepia(0.25) contrast(1.02);
 }
 
 .margin-note span {
@@ -219,7 +245,85 @@ body {
   width: 34px;
   height: 34px;
   object-fit: contain;
-  filter: sepia(0.25) contrast(1.02);
+}
+
+/* ----- molecule guess (inline) ----- */
+
+.molecule-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 320px;
+  margin-top: 0.6rem;
+}
+
+.molecule-inline__input {
+  flex: 1;
+  min-width: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px dashed var(--ink-faint);
+  padding: 0.35rem 0.1rem;
+}
+
+.molecule-inline__input::placeholder {
+  color: var(--ink-faint);
+}
+
+.molecule-inline__input:focus-visible {
+  outline: none;
+  border-color: var(--amber);
+}
+
+.molecule-inline__submit {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--amber-dark);
+  background: none;
+  border: none;
+  border-bottom: 1px dashed var(--amber-dark);
+  padding: 0.3rem 0;
+  flex-shrink: 0;
+}
+
+.molecule-inline__submit:hover,
+.molecule-inline__submit:focus-visible {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.molecule-inline__feedback {
+  min-height: 1.2rem;
+  font-family: "Caveat", cursive;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-top: 0.35rem;
+}
+
+.molecule-inline__feedback.is-correct {
+  color: var(--amber-dark);
+}
+
+.molecule-inline__feedback.is-wrong {
+  color: var(--margin-line);
+}
+
+.molecule-inline__link {
+  color: var(--amber-dark);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--amber-dark);
+}
+
+.molecule-inline__link:hover,
+.molecule-inline__link:focus-visible {
+  color: var(--ink);
+  border-color: var(--ink);
 }
 
 .stamp-photo {
@@ -256,6 +360,20 @@ body {
   font-size: 0.98rem;
   color: var(--ink);
   max-width: 62ch;
+}
+
+/* ----- log columns (experience page) ----- */
+
+.log-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2.2rem;
+  align-items: start;
+  margin-top: 1.1rem;
+}
+
+.log-columns .section-label {
+  margin-top: 0;
 }
 
 /* ----- index / item list ----- */
@@ -365,6 +483,10 @@ a.index-item:hover .index-leader {
     left: 0.85rem;
   }
 
+  .belongs-to {
+    font-size: 1rem;
+  }
+
   .notebook-title {
     font-size: 1.5rem;
   }
@@ -390,4 +512,14 @@ a.index-item:hover .index-leader {
   .title-icon {
     width: 30px;
   }
+
+  .log-columns {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
+  .log-column + .log-column .section-label {
+    margin-top: 0.5rem;
+  }
+
 }
