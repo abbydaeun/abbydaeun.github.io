@@ -342,11 +342,10 @@ body {
 .stamp-photo {
   order: 1;
   flex-shrink: 0;
-  width: 212px;
-  height: 212px;
-  object-fit: cover;
-  object-position: center 22%;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  object-position: center top;
 }
 
 /* ----- section content ----- */
@@ -527,8 +526,10 @@ a.index-item:hover .index-leader {
 
   .stamp-photo {
     float: right;
-    width: 68px;
-    height: 68px;
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+    object-position: center top;
     margin: 0.1rem 0 0.6rem 1.5rem;
   }
 
